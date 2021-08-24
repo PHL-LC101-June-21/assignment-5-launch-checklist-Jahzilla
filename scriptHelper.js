@@ -16,13 +16,43 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
    */
 }
 
+
+let pilotName = document.querySelector("input[name=pilotName]");
+let copilotName = document.querySelector("input[name=copilotName]");
+let fuelLevel = document.querySelector("input[name=fuelLevel]");
+let cargoMass = document.querySelector("input[name=cargoMass]");
+let form = document.querySelector("form");
+
 function validateInput(testInput) {
+    for (var testInput in formFields)
+        if (testInput.value === ""){
+            return "Empty";
+        } else if(isNan(testInput.value)) {
+             return "Not a Number";
+        } else if(typeof testInput.value === "number"){ 
+            return "Is a Number";
+        } else {
+            return "good";
+        }
    
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   
-}
+    if(validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty"){
+        alert("All fields are required!");
+    } else if(validateInput(fuelLevel) === "Not a Number"){
+        alert("Please input a number for Fuel Level");
+    } else if(validateInput(cargoLevel) === "Not a Number"){
+        alert("Please input a number for Cargo Level");
+    } else if(validateInput(pilot) === "Is a Number"){
+        alert("Error: you submitted a number for Pilot Name");
+    } else if(validateInput(copilot) === "Is a Number"){
+        alert("Error:you submitted a number for Co-Pilot Name");
+    } else {
+        break;
+    }
+} 
+
 
 async function myFetch() {
     let planetsReturned;
