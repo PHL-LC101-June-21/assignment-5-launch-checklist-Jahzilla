@@ -16,19 +16,26 @@ window.addEventListener("load", function() {
        addDestinationInfo(this.document, planet.name, planet.diameter, planet.star, planet.distance, planet.moons, planet.image)
        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
    })
-    let pilotInput = document.querySelector("input[name='pilotName']");
-    let copilotInput = document.querySelector("input[name='copilotName']");
-    let fuelLevelInput = document.querySelector("input[name='fuelLevel']");
-    let cargoMassInput = document.querySelector("input[name='cargoMass']");
-    let pilotValue = pilotInput.value;
-    console.log(pilotValue);
-    let copilotValue = copilotInput.value;
-    let fuelLevelValue = fuelLevelInput.value;
-    let cargoMassValue = cargoMassInput.value;
+    // let pilotInput = this.document.querySelector('input[name="pilotName"]');
+    // let copilotInput = this.document.querySelector('input[name="copilotName"]');
+    // let fuelLevelInput = this.document.querySelector('input[name="fuelLevel"]');
+    // let cargoMassInput = this.document.querySelector('input[name="cargoMass"]');
+    // let pilotValue = pilotInput.value;
+    // let copilotValue = copilotInput.value;
+    // let fuelLevelValue = fuelLevelInput.value;
+    // let cargoMassValue = cargoMassInput.value;
     let form = document.querySelector("form");
     let list = document.getElementById('faultyItems')
     form.addEventListener("submit", function(event){
         event.preventDefault();
+    let pilotInput = document.querySelector('input[name="pilotName"]');
+    let copilotInput = document.querySelector('input[name="copilotName"]');
+    let fuelLevelInput = document.querySelector('input[name="fuelLevel"]');
+    let cargoMassInput = document.querySelector('input[name="cargoMass"]');
+    let pilotValue = pilotInput.value;
+    let copilotValue = copilotInput.value;
+    let fuelLevelValue = fuelLevelInput.value;
+    let cargoMassValue = cargoMassInput.value;
         formSubmission(this.document, list, pilotValue, copilotValue, fuelLevelValue, cargoMassValue);
 
         

@@ -1,5 +1,5 @@
 // Write your helper functions here!
-// require('isomorphic-fetch');
+require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     let missionTarget = document.getElementById("missionTarget");
@@ -67,7 +67,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
         fuelStatus.innerHTML = "There is not enough fuel for the journey.";
         launchStatus.style.color = 'red';
         launchStatus.innerHTML = "Shuttle not ready for launch";
-    } else if(cargoLevel > 10000){
+    } else if(cargoMass > 10000){
         list.style.visibility = "visible";
         cargoStatus.innerHTML = "There is too much mass for the shuttle to take off.";
         launchStatus.style.color = 'red';
@@ -98,8 +98,8 @@ function pickPlanet(planets) {
     return planets[randomInteger];
 }
 
-// module.exports.addDestinationInfo = addDestinationInfo;
-// module.exports.validateInput = validateInput;
-// module.exports.formSubmission = formSubmission;
-// module.exports.pickPlanet = pickPlanet; 
-// module.exports.myFetch = myFetch;
+module.exports.addDestinationInfo = addDestinationInfo;
+module.exports.validateInput = validateInput;
+module.exports.formSubmission = formSubmission;
+module.exports.pickPlanet = pickPlanet; 
+module.exports.myFetch = myFetch;
